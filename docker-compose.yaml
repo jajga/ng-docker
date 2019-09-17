@@ -1,0 +1,16 @@
+version : '2'
+services : 
+  web:
+    image: angular
+    build: ./angular-webpack
+    volumes:
+    - './angular-webpack:/usr/src/app' 
+    ports:
+    - "80:80"
+    - "82:82"
+    - "8080:8080"
+    - "4200:4200"
+    - "443:443"
+    command: > 
+        bash -c "npm install && npm start"
+    
